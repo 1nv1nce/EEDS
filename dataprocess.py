@@ -48,22 +48,6 @@ data = load_json_file(file_path)
 
 keys_to_remove = ['title', 'vertexSet', 'relation_tag']
 processed_data = []
-# if isinstance(data, list):
-#     for item in data:
-#         item = add_instructions(item)
-#         item = update_key(item, 'sents', 'input')
-#         item = update_key(item, 'labels', 'output')
-#         item = remove_keys(item, keys_to_remove)
-#         item = modify_labels(item)
-#         processed_data.append(item)
-#     updated_data = processed_data
-# else:
-#     data = add_instructions(data)
-#     data = update_key(data, 'sents', 'input')
-#     data = update_key(data, 'labels', 'output')
-#     data = remove_keys(data, keys_to_remove)
-#     data = modify_labels(data)
-#     updated_data = [data]
 
 if isinstance(data, list):
     for item in data:

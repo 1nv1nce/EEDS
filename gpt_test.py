@@ -83,23 +83,7 @@ for item in tqdm(data, desc="Processing items"):
     prediction = prediction.replace("}   ]","}]")
     prediction = prediction.replace("```json[","[")
     prediction = prediction.replace("```json","")
-    # print("prediction: \n", prediction)
-    # start_idx = prediction.find("###output:") + len("###output:")
-    # # 找到第一个'['
-    # start_json_idx = prediction.find("[", start_idx)
-    # # 找到第一个']'之后的位置
-    # end_json_idx = prediction.find("]", start_json_idx) + 1
-    # if end_json_idx == 0: 
-    #     if prediction[-1] != ']':
-    #         if prediction[-1] == '}':
-    #             prediction += ']'
-    #         else:
-    #             prediction += "}]"
-    #     end_json_idx = len(prediction)
-    # json_str = prediction[start_json_idx:end_json_idx]
-    # json_str = json_str.replace("'", '"').replace('\\\\"', "\\'")
-    # fixed_data = re.sub(r"(?<!\\)'(?=[^'\"]*?[\":])", '"', json_str)
-    # print("json_str: \n", json_str)
+
     try:
         extracted_triples = json.loads(prediction)
         num_correct = compare_triples(extracted_triples, true_triples)
